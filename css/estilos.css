@@ -3,6 +3,8 @@
     padding: 0%;
     box-sizing: border-box;
 }
+
+/*mobile first*/
 header{
     width: 100vw;
     height: 80px;
@@ -16,17 +18,36 @@ header{
     text-transform: uppercase;
     text-decoration: none;
     margin-left: 20px;
+    margin-right: 20px;
 }
 header nav{
     position: absolute;
-    top: 80px;
+    top: 82px;
     right: 0%;
     width: 0%;
     height: 100%;
-    background-color: red;
+    background-color: lightblue;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+}
+header nav ol{
+    position: absolute;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+}
+header nav ol li{
+    line-height: 80px;
+
+}
+header nav ol li a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 .mostrar{
-    width: 100%;
+    width: 85%;
 }
 .menu-toggle{
     background: none;
@@ -34,4 +55,26 @@ header nav{
     color: white;
     font-size: 25px;
     margin-right: 20px;
+}
+/*termina mobile first*/
+
+@media screen and (min-width: 768px){
+    .menu-toggle{
+        display: none;
+    }
+    header nav {
+        background-color: firebrick;
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+    header nav ol{
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        height: 80px;
+}
+    header nav ol li{
+        margin: 1rem;
+}
 }
